@@ -25,9 +25,9 @@ while(choice == 'Y'):
 		proper_linl = 'https://www.youtube.com/watch'+raw_link
 
 
-		command='youtube-dl -t --format bestaudio '+proper_linl
+		buorne_unixshell_command='youtube-dl -t --format bestaudio '+proper_linl
 		print ('Processed Querying , Starting Phase 2')
-		os.system(command)
+		os.system(buorne_unixshell_command)
 
 		choice = raw_input('Download Another music Y/N ?')
 	except :
