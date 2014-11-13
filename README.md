@@ -13,5 +13,7 @@ Prequisites :
     `$sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl`
    ` $sudo chmod a+x /usr/local/bin/youtube-dl`
 
-How to download music?
+##How to download music?
+
+
   Run the script and enter the name of the music. The music will be downloaded in the current directory.
