@@ -10,7 +10,7 @@ Downloads Music From The Web
 Just run the following command where you extracted the files:
 
 
-    `$ python super_installer.py ` 
+    $ python super_installer.py 
 
 And Boom! Done    
 
