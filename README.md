@@ -3,17 +3,25 @@ Auto-Music-Downloader
 
 Downloads Music From The Web
 
-Prequisites :
+## Installation
+> Easy Installation with `super_installer.py` 
 
-1. Python 2.7
 
-    `$ sudo apt-get install python2`
-2. youttube-dl 
+Just run the following command where you extracted the files:
 
-    `$sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl`
-   ` $sudo chmod a+x /usr/local/bin/youtube-dl`
+
+    `$ python super_installer.py ` and Boom! Done!
+
 
 ##How to download music?
+Open the terminal in the location where you want to download music and run the following command
+
+`$ music_downloader.py `
+
+Enter the name of the song! Boom! Downloaded !
 
 
-  Run the script and enter the name of the music. The music will be downloaded in the current directory.
+### Under the hood
+The `super_installer.py` script moves the main script to `$ ~/.music_downloaer` and adds this path in you `.profile` file.
+
+It will automatically install dependencies from `requirements.txt`
