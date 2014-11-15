@@ -10,7 +10,9 @@ Downloads Music From The Web
 Just run the following command where you extracted the files:
 
 
-    `$ python super_installer.py ` and Boom! Done!
+    `$ python super_installer.py ` 
+
+And Boom! Done    
 
 
 ##How to download music?
