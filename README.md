@@ -6,11 +6,17 @@ Downloads Music From The Web
 ## Installation
 > Easy Installation with `super_installer.py` 
 
+##Prequsites 
+    1. MacOsx/Linux
+    2. Python 2.7
+    3. Pip 
 
 Just run the following command where you extracted the files:
 
 
     $ python super_installer.py 
+
+> Warning : Don't Use Sudo 
 
 And Boom! Done    
 
