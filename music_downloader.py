@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 import glob
 
@@ -24,10 +26,11 @@ while(choice == 'Y'):
 		raw_link= (html[a+43:a+57]) # May change when Youtube Website may get updated in the future.
 		proper_linl = 'https://www.youtube.com/watch'+raw_link
 
-
-		buorne_unixshell_command='youtube-dl -t --format bestaudio '+proper_linl
+		#youtube-dl --extract-audio --audio-format mp3
+		#command='youtube-dl -t --format bestaudio '+proper_linl
+		command = 'youtube-dl --extract-audio --audio-format mp3 '+proper_linl
 		print ('Processed Querying , Starting Phase 2')
-		os.system(buorne_unixshell_command)
+		os.system(command)
 
 		choice = raw_input('Download Another music Y/N ?')
 	except :
