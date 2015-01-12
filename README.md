@@ -6,7 +6,7 @@ Downloads Music From The Web
 ## Installation
 > Easy Installation with `super_installer.py` 
 
-##Prequsites 
+##Prerequisites 
     1. MacOsx/Linux
     2. Python 2.7
     3. Pip 
