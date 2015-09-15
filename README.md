@@ -1,7 +1,9 @@
 Auto-Music-Downloader
 =====================
 
-#Instantly download any song, without knowing the name of the song!
+#Instantly download any song!
+
+without knowing the name of the song!
 
 Eg: 
 ```❯ python music_downloader.py```
@@ -12,7 +14,7 @@ Eg:
 
 under my umbrella 
 
-Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z`
+>>Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z`
 
 
 ## Installation
