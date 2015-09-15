@@ -1,9 +1,9 @@
 Auto-Music-Downloader
 =====================
 
-#Instantly download any song!
+#Instantly download any song! <small>without knowing the name of the song! </small>
 
-without knowing the name of the song!
+
 
 Eg: 
 ```❯ python music_downloader.py```
