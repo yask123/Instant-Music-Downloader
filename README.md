@@ -1,7 +1,15 @@
 Auto-Music-Downloader
 =====================
 
-Downloads Music From The Web
+#Instantly download any song, without knowing the name of the song!
+
+Eg: 
+`❯ python music_downloader.py`                                                                                       
+>>Enter songname/ lyrics/ artist.. or whatever
+under my umbrella 
+
+`Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z`
+
 
 ## Installation
 > Easy Installation with `super_installer.py` 
