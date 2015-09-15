@@ -17,6 +17,13 @@ i tried so hard and got so far
 
 >>Downloaded Linkin Park - In The End
 ```
+```zsh
+>> Enter songname/ lyrics/ artist.. or whatever
+
+yeh hosla kaise jhuke
+
+>>Downloaded Yeh Hausla Kaise Jhuke - Salim-Sulaiman
+```
 
 ###Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=aYOLU36iy1s
