@@ -23,7 +23,8 @@ under my umbrella
 
 ## Requirements
 Youtube-dl
+BeautifulSoup
 
-`pip install youtube-dl` 
+Run `python install -r requirements.txt` 
  
 
