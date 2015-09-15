@@ -22,8 +22,8 @@ under my umbrella
 
 
 ## Requirements
-Youtube-dl
-BeautifulSoup
+1. Youtube-dl
+2. BeautifulSoup
 
 Run `python install -r requirements.txt` 
  
