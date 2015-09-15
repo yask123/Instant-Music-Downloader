@@ -4,7 +4,8 @@ Auto-Music-Downloader
 #Instantly download any song, without knowing the name of the song!
 
 Eg: 
-`❯ python music_downloader.py`                                                                                       
+```❯ python music_downloader.py```
+
 >>Enter songname/ lyrics/ artist.. or whatever
 under my umbrella 
 
