@@ -13,9 +13,9 @@ Without knowing the name of the song!!!!
 ```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
 
-under my umbrella 
+i tried so hard and got so far 
 
->>Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z
+>>Downloaded Linkin Park - In The End
 ```
 
 ###Video
