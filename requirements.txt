@@ -1,1 +1,2 @@
-youtube-dl==2014.11.13.3
+youtube-dl
+BeautifulSoup
