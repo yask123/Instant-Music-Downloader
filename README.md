@@ -21,6 +21,9 @@ under my umbrella
 ```
 
 
-## Installation
-Just run the damn python file! 
+## Requirements
+Youtube-dl
+
+`pip install youtube-dl` 
+ 
 
