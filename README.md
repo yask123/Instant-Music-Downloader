@@ -9,12 +9,13 @@ Eg:
 ```❯ python music_downloader.py```
 
 
-````zsh
+```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
 
 under my umbrella 
 
->>Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z```
+>>Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z
+```
 
 
 ## Installation
