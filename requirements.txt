@@ -1,2 +1,2 @@
 youtube-dl
-BeautifulSoup
+BeautifulSoup4
