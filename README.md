@@ -20,6 +20,13 @@ i tried so hard and got so far
 ```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
 
+another turning point a fork stuck in the road
+
+>>Downloaded Green Day - Good Riddance
+```
+```zsh
+>> Enter songname/ lyrics/ artist.. or whatever
+
 yeh hosla kaise jhuke
 
 >>Downloaded Yeh Hausla Kaise Jhuke - Salim-Sulaiman
