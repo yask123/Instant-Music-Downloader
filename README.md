@@ -1,7 +1,8 @@
 Auto-Music-Downloader
 =====================
 
-#Instantly download any song! <small>without knowing the name of the song! </small>
+#Instantly download any song! 
+### Without knowing the name of the song!!!!
 
 
 
