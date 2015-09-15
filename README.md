@@ -7,8 +7,8 @@ Eg:
 ```❯ python music_downloader.py```
 
 
-`>> Enter songname/ lyrics/ artist.. or whatever
-
+````zsh
+>> Enter songname/ lyrics/ artist.. or whatever
 
 under my umbrella 
 
