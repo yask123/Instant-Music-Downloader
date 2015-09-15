@@ -6,7 +6,8 @@ Auto-Music-Downloader
 Eg: 
 ```❯ python music_downloader.py```
 
->>Enter songname/ lyrics/ artist.. or whatever
+
+>> Enter songname/ lyrics/ artist.. or whatever
 under my umbrella 
 
 `Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z`
