@@ -7,10 +7,12 @@ Eg:
 ```❯ python music_downloader.py```
 
 
-`>> Enter songname/ lyrics/ artist.. or whatever`
-`under my umbrella `
+```>> Enter songname/ lyrics/ artist.. or whatever
 
-`Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z`
+
+under my umbrella 
+
+Downloaded Rihanna - Umbrella (Orange Version) ft. JAY-Z```
 
 
 ## Installation
