@@ -42,6 +42,6 @@ alt="Demo" width="240" height="180" border="10" /></a>
 1. Youtube-dl
 2. BeautifulSoup
 
-Run `python install -r requirements.txt` 
+Run `pip install -r requirements.txt` 
  
 
