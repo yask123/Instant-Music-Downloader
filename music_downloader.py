@@ -4,10 +4,11 @@ import os
 import glob
 from bs4 import BeautifulSoup
 import urllib2
+from urllib import quote_plus as qp
 
 search = 'love story taylor' #I love you Taylor swift!
 search = raw_input('Enter songname/ lyrics/ artist.. or whatever ')
-search = search.replace(' ','%20')
+search = qp(search)
 
 print('Making a Query Request! ')
 response = urllib2.urlopen('https://www.youtube.com/results?search_query='+search)
