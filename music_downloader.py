@@ -29,9 +29,9 @@ for link in soup.find_all('a'):
     	break
 
 # Links are relative on page, making them absolute.
-video_link =  'http://www.youtube.com/'+proper_linl
+video_link =  'http://www.youtube.com/'+video_link
 command = ('youtube-dl --extract-audio --audio-format mp3 --audio-quality ' +
-           DEFAULT_AUDIO_QUALITY + ' ' +proper_linl)
+           DEFAULT_AUDIO_QUALITY + ' ' +video_link)
 
 # Youtube-dl is a proof that god exists.
 print ('Downloading...')
