@@ -42,6 +42,9 @@ alt="Demo" width="240" height="180" border="10" /></a>
 1. Youtube-dl
 2. BeautifulSoup
 
-Run `sh install.sh` 
+
+## Instructions
+
+Run `sh install.sh` from your terminal.
  
 
