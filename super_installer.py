@@ -9,4 +9,4 @@ os.system('mkdir ~/.music_downloader')
 os.system('cp '+current_path+'/music_downloader.py ~/.music_downloader')
 
 with open (prof_path+'/.profile','a') as f:
-	f.write('PATH="$PATH:~/.music_downloader')
+	f.write('PATH="$PATH:~/.music_downloader"')
