@@ -6,9 +6,6 @@ from bs4 import BeautifulSoup
 import urllib2
 from urllib import quote_plus as qp
 
-# High Quality Songs, yeah baby!
-DEFAULT_AUDIO_QUALITY = '320K'
-
 search = ''
 # We do not want to except empty inputs :)
 while search == '':
@@ -30,12 +27,8 @@ for link in soup.find_all('a'):
 
 # Links are relative on page, making them absolute.
 video_link =  'http://www.youtube.com/'+video_link
-command = ('youtube-dl --extract-audio --audio-format mp3 --audio-quality ' +
-           DEFAULT_AUDIO_QUALITY + ' ' +video_link)
+command = ('youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 '+video_link)
 
 # Youtube-dl is a proof that god exists.
 print ('Downloading...')
 os.system(command)
-
-
-
