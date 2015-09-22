@@ -7,7 +7,7 @@ import urllib2
 from urllib import quote_plus as qp
 
 search = ''
-# We do not want to except empty inputs :)
+# We do not want to accept empty inputs :)
 while search == '':
   search = raw_input('Enter songname/ lyrics/ artist.. or whatever ')
 search = qp(search)
@@ -21,7 +21,7 @@ soup = BeautifulSoup(html, 'html.parser')
 for link in soup.find_all('a'):
     if '/watch?v=' in link.get('href'):
     	print(link.get('href'))
-    	# May change when Youtube Website may get updated in the future.
+    	# May change when Youtube Website gets updated in the future.
     	video_link = link.get('href')
     	break
 
