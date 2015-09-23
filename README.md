@@ -37,7 +37,6 @@ alt="Demo" width="240" height="180" border="10" /></a>
 
 
 ## Requirements
-1. Python 2
 2. Youtube-dl
 3. BeautifulSoup
 
