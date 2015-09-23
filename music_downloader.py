@@ -6,11 +6,10 @@ from bs4 import BeautifulSoup
 
 # Version compatiblity
 import sys
-isPython2 = True
 if (sys.version_info > (3,0)):
 	from urllib.request import urlopen
 	from urllib.parse import quote_plus as qp
-	isPython2 = False
+	raw_input = input
 else:
 	from urllib2 import urlopen
 	from urllib import quote_plus as qp
@@ -18,7 +17,7 @@ else:
 search = ''
 # We do not want to accept empty inputs :)
 while search == '':
-  search = raw_input('Enter songname/ lyrics/ artist.. or whatever\n> ') if isPython2 else input('Enter songname/ lyrics/ artist.. or whatever\n> ')
+  search = raw_input('Enter songname/ lyrics/ artist.. or whatever\n> ')
 search = qp(search)
 
 print('Making a Query Request! ')
