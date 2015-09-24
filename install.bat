@@ -10,6 +10,7 @@ goto check_Permissions
 mkdir "%UserProfile%\music_downloader"
 copy ".\music_downloader.py" "%UserProfile%\music_downloader\music_downloader.py"
 
+rem check if already exists in PATH
 echo. ";%PATH%;" | findstr /C:";%UserProfile%\music_downloader;" 1>nul
 if errorlevel 1 (
     set svar="%PATH%;%UserProfile%\music_downloader;;"
@@ -17,6 +18,7 @@ if errorlevel 1 (
     :pathok
     @setx PATH "%PATH%;%UserProfile%\music_downloader" /m
     goto end
+    rem needed as if-else logic is lost after goto
 ) ELSE (
 	echo Already exists in PATH
 )
