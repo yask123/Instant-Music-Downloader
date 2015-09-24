@@ -9,7 +9,14 @@ goto check_Permissions
 :back
 mkdir "%UserProfile%\music_downloader"
 copy ".\music_downloader.py" "%UserProfile%\music_downloader\music_downloader.py"
-@setx PATH "%PATH%;%UserProfile%\music_downloader" /m
+
+echo. ";%PATH%;" | findstr /C:";%UserProfile%\music_downloader;" 1>nul
+if errorlevel 1 (
+	@setx PATH "%PATH%;%UserProfile%\music_downloader" /m
+) ELSE (
+	echo Already exists in PATH
+)
+
 set /p tempvar="SUCCESS. Press Enter to continue"
 exit /B
 
