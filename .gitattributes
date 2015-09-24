@@ -1,0 +1,2 @@
+*.bat linguist-vendored=true
+*.sh linguist-vendored=true
