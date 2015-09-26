@@ -50,3 +50,7 @@ alt="Demo" width="240" height="180" border="10" /></a>
 Run `sh install.sh` from your terminal.
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/yask123/instant-music-downloader/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
