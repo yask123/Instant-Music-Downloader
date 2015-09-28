@@ -41,14 +41,19 @@ alt="Demo" width="240" height="180" border="10" /></a>
 
 
 ## Requirements
-2. Youtube-dl
-3. BeautifulSoup
+1. Youtube-dl
+2. BeautifulSoup
 
 
 ## Instructions
 
+**Linux/Mac**
+
 Run `sh install.sh` from your terminal.
 
+**Windows**
+
+Run `install.bat` as administrator.
 
 
 
