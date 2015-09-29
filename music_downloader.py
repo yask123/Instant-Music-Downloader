@@ -32,7 +32,7 @@ for link in soup.find_all('a'):
     	video_link = link.get('href')
     	break
 
-title = title = soup.find("a", "yt-uix-tile-link").text
+title = soup.find("a", "yt-uix-tile-link").text
 print("Found: " + title)
 prompt = raw_input("Download song (y/n)? ")
 if prompt != "y":
