@@ -4,7 +4,14 @@ Without knowing the name of the song!!!!
 
 > This is so cool!
 
+### Installation
+For Python 2.7
 
+```$ pip install instantmusic```
+
+For Python 3.4
+
+```$ pip install instantmusic```
 
 #### Example
 
