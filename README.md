@@ -11,7 +11,7 @@ For Python 2.7
 
 For Python 3.4
 
-```$ pip install instantmusic```
+```$ pip3 install instantmusic```
 
 ## Example
 
