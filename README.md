@@ -52,15 +52,6 @@ alt="Demo" width="240" height="180" border="10" /></a>
 2. BeautifulSoup
 
 
-## Instructions
-
-**Linux/Mac**
-
-Run `sh install.sh` from your terminal.
-
-**Windows**
-
-Run `install.bat` as administrator.
 
 
 
