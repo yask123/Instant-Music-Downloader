@@ -4,7 +4,7 @@ Without knowing the name of the song!!!!
 
 > This is so cool!
 
-### Installation
+## Installation
 For Python 2.7
 
 ```$ pip install instantmusic```
@@ -13,9 +13,9 @@ For Python 3.4
 
 ```$ pip install instantmusic```
 
-#### Example
+## Example
 
-```❯ python music_downloader.py```
+```❯instantmusic ```
 
 ```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
