@@ -42,8 +42,8 @@ yeh hosla kaise jhuke
 ```
 
 ### Video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=iWJcg8pIHMY
-" target="_blank"><img src="http://img.youtube.com/vi/iWJcg8pIHMY/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=H2GQc81hpBE
+" target="_blank"><img src="http://img.youtube.com/vi/H2GQc81hpBE/0.jpg" 
 alt="Demo" width="240" height="180" border="10" /></a>
 
 
@@ -52,8 +52,4 @@ alt="Demo" width="240" height="180" border="10" /></a>
 2. BeautifulSoup
 
 
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/yask123/instant-music-downloader/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
