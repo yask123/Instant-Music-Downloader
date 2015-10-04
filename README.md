@@ -7,11 +7,11 @@ Without knowing the name of the song!!!!
 ## Installation
 For Python 2.7
 
-```$ pip install instantmusic```
+```$ sudo  pip install instantmusic```
 
 For Python 3.4
 
-```$ pip3 install instantmusic```
+```$ sudo pip3 install instantmusic```
 
 ## Example
 
