@@ -14,11 +14,18 @@ else:
 	from urllib2 import urlopen
 	from urllib import quote_plus as qp
 
+
 search = ''
-# We do not want to accept empty inputs :)
-while search == '':
-  search = raw_input('Enter songname/ lyrics/ artist.. or whatever\n> ')
-search = qp(search)
+# Only prompt if there are no command-line arguments
+if not sys.argv[1:]:
+    # We do not want to accept empty inputs :)
+    while search == '':
+        search = raw_input('Enter songname/ lyrics/ artist.. or whatever\n> ')
+        search = qp(search)
+else:
+    search = qp(' '.join(sys.argv[1:]))
+
+print 'search is: %s, with type %s' % (search, type(search))
 
 print('Making a Query Request! ')
 
