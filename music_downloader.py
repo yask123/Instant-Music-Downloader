@@ -41,6 +41,14 @@ def search_videos(query):
     return extract_videos(response.read())
 
 def query_and_download(search, has_prompts=True, is_quiet=False):
+    """
+    Queries the internet for given lyrics and downloads them into the current working directory.
+    If has_prompts is False, will download first available song.
+    If is_quiet is True, will run beautiful-soup in quiet mode. Prompts will also automatically be turned
+                         off in quiet mode. This is mainly so that instantmusic can be run as a background process.
+
+    Returns the title of the video downloaded from.
+    """
     if not is_quiet:
         print('Searching...')
     
@@ -51,7 +59,8 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
             print('No results found matching your query.')
             sys.exit()
         else:
-            print('Found:', '\n'.join(list_movies(available)))
+            if has_prompts:
+                print('Found:', '\n'.join(list_movies(available)))
 
     # We only ask the user which one they want if prompts are on, of course
     if has_prompts and not is_quiet:
@@ -76,9 +85,10 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         'http://www.youtube.com/' + video_link]
 
     if is_quiet:
-        command_tokens.insert(1, '--quiet')
+        command_tokens.insert(1, '--q')
 
     command = ' '.join(command_tokens)
+    
 
     # Youtube-dl is a proof that god exists.
     if not is_quiet:
@@ -87,69 +97,65 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
 
     return title
 
-def search_uses_flags(argstring):
-    has_flags = False
-    if (argstring.find('-p') == 0) or (argstring.find('q') == 0) or (argstring.find('-s') == 0)\
-        or (argstring.find('-l') == 0) or (argstring.find('-f') == 0):
-        has_flags = True
-    return has_flags
-                            
+def search_uses_flags(argstring, *flags):
+    """
+    Check if the given flags are being used in the command line argument string
+    """
+    for flag in flags:
+        if (argstring.find(flag) != 0):
+            return True
+    return False
+
 def main():
     """
     Run the program session
     """
     argument_string = ' '.join(sys.argv[1:])
-
-    # No command-line arguments
     search = ''
 
+    # No command-line arguments
     if not sys.argv[1:]:
         # We do not want to accept empty inputs :)
         while search == '':
             search = raw_input('Enter songname/ lyrics/ artist.. or whatever\n> ')
-            search = qp(search)
-            query_and_download(search)
+        search = qp(search)
+        downloaded = query_and_download(search)
 
-    # Deal with 'default' case where -p or -q is specified but not the input type
-    # Default is '-s' input type
-    elif not argument_string.find('-s') and not argument_string.find('-l') and not argument_string.find('-f'):
-        lyrics = ' '.join(argument_string)
-        lyrics = lyrics.replace('-p', '').replace('-q', '')
-        search = qp(lyrics)
-
-        has_prompt = not argument_string.find('-p')
-        is_quiet = argument_string.find('-q')
-
-        downloaded = query_and_download(search, has_prompt, is_quiet)
-
-    # Deal with any cases where no flag is supplied with lyrics, or
-    # any number of the input flags are supplied     
+    # Command-line arguments detected!
     else:
-        # No flag
-        if not search_uses_flags(argument_string):
-           search = qp(' '.join(sys.argv[1:]))
-           downloaded = query_and_download(search)
-           print("Downloaded %s" % downloaded)
+        # No flags at all are specified
+        if not search_uses_flags(argument_string, '-s', '-i', '-f', '-p', '-q'):
+            search = qp(' '.join(sys.argv[1:]))
+            downloaded = query_and_download(search)
 
+        # No input flags are specified
+        elif not search_uses_flags(argument_string, '-s', '-i', '-f'):
+            # Default to -s 
+            lyrics = argument_string.replace('-p', '').replace('-q', '')
+            search = qp(lyrics)
+            downloaded = query_and_download(search, not search_uses_flags('-p'), search_uses_flags('-q'))
 
-        # Flag provided
+        # Some input flags are specified
         else:
-            # Lots of parser-building fun
+            # Lots of parser-building fun!
             import argparse
             parser = argparse.ArgumentParser(description='Instantly download any song!')
             parser.add_argument('-p', action='store_false', dest='has_prompt', help="Turn off download prompts")
-            parser.add_argument('-q', action='store_true', dest='is_quiet', help="Run in quiet mode")
+            parser.add_argument('-q', action='store_true', dest='is_quiet', help="Run in quiet mode. Automatically turns off prompts.")
             parser.add_argument('-s', action='store', dest='song', nargs='+', help='Download a single song.')
             parser.add_argument('-l', action='store', dest='songlist', nargs='+', help='Download a list of songs, with lyrics separated by a comma (e.g. "i tried so hard and got so far, blackbird singing in the dead of night, hey shawty it\'s your birthday).')
-            parser.add_argument('-f', action='store', dest='file', nargs='+', help='Download a list of songs from a file input. Each line in the file is considered one song.')
+            parser.add_argument('-f', action='store', dest='file', nargs='+', help='Download a list of songs from a file input. Each line in the file is considered one song.') 
 
             # Parse and check arguments
             results = parser.parse_args()
 
-            songs_list = []
+            song_list = []
+            if results.song:
+                song_list.append(qp(' '.join(results.song)))
+
             if results.songlist:
                 songs = ' '.join(results.songlist)
-                songs_list.extend([qp(song) for song in songs.split(',')])
+                song_list.extend([qp(song) for song in songs.split(',')])
 
             if results.file:
                 with open(results.file[0], 'r') as f:
@@ -158,13 +164,13 @@ def main():
                     songs = filter(None, (song.rstrip() for song in songs))
                     # strip out any new lines
                     songs = [qp(song.strip()) for song in songs if song]
-                    songs_list.extend(songs)
+                    song_list.extend(songs)
 
             prompt = True if results.has_prompt else False
             quiet = True if results.is_quiet else False
 
             downloads = []
-            for song in songs_list:
+            for song in song_list:
                 downloads.append(query_and_download(song, prompt, quiet))
 
             print('Downloaded: %s' % ', '.join(downloads))
