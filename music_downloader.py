@@ -25,8 +25,6 @@ if not sys.argv[1:]:
 else:
     search = qp(' '.join(sys.argv[1:]))
 
-print 'search is: %s, with type %s' % (search, type(search))
-
 print('Making a Query Request! ')
 
 # Magic happens here.
