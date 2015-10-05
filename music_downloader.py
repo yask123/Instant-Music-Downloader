@@ -17,8 +17,10 @@ else:
 
 
 # Define query and download code.
-def query_and_download(search, has_prompts=True):
-    print('Making a Query Request! ')
+def query_and_download(search, has_prompts=True, is_quiet=False):
+    
+    if not is_quiet:
+        print('Making a Query Request! ')
 
     # Magic happens here.
     response = urlopen('https://www.youtube.com/results?search_query=' + search)
@@ -31,7 +33,9 @@ def query_and_download(search, has_prompts=True):
     	    break
 
     title = soup.find("a", "yt-uix-tile-link").text
-    print("Found: " + title)
+
+    if not is_quiet:
+        print("Found: " + title)
     if has_prompts:
         prompt = raw_input("Download song (y/n)? ")
         if prompt != "y":
@@ -39,10 +43,15 @@ def query_and_download(search, has_prompts=True):
 
     # Links are relative on page, making them absolute.
     video_link = 'http://www.youtube.com/' + video_link
-    command = 'youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 ' + video_link
+    if is_quiet:
+        command = 'youtube-dl -q --extract-audio --audio-format mp3 --audio-quality 0 ' + video_link
+    else:
+        command = 'youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 ' + video_link
+     
 
     # Youtube-dl is a proof that god exists.
-    print ('Downloading...')
+    if not is_quiet:
+        print ('Downloading...')
     os.system(command)
 
 
@@ -69,6 +78,7 @@ else:
         import argparse
         parser = argparse.ArgumentParser(description='Instantly download any song!')
         parser.add_argument('-p', action='store_false', dest='has_prompt', help="Turn off download prompts")
+        parser.add_argument('-q', action='store_true', dest='is_quiet', help="Run in quiet mode")
         parser.add_argument('-s', action='store', dest='song', nargs='+', help='Download a single song.')
         parser.add_argument('-l', action='store', dest='songlist', nargs='+', help='Download a list of songs, with lyrics separated by a comma (e.g. "i tried so hard and got so far, blackbird singing in the dead of night, hey shawty it\'s your birthday).')
         parser.add_argument('-f', action='store', dest='file', nargs='+', help='Download a list of songs from a file input. Each line in the file is considered one song.')
@@ -87,10 +97,14 @@ else:
         if results.file:
             with open(results.file[0], 'r') as f:
                 songs = f.readlines()
-                songs = [qp(song.strip()) for song in songs]
+                # strip out any empty lines
+                songs = filter(None, (song.rstrip() for song in songs))
+                # strip out any new lines
+                songs = [qp(song.strip()) for song in songs if song]
                 songs_list.extend(songs)
 
         prompt = True if results.has_prompt else False
+        quiet = True if results.is_quiet else False
         for song in songs_list:
-            query_and_download(song, prompt)
+            query_and_download(song, prompt, quiet)
 
