@@ -3,6 +3,7 @@
 from __future__ import print_function
 import os
 import re
+import readline
 
 from bs4 import BeautifulSoup
 
