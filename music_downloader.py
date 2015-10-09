@@ -51,9 +51,9 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
     """
     if not is_quiet:
         print('Searching...')
-    
+
     available = search_videos(search)
-    
+
     if not is_quiet:
         if not available:
             print('No results found matching your query.')
@@ -68,7 +68,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         while choice.strip() == '':
             choice = raw_input('Pick one: ')
         title, video_link = available[int(choice)]
-        
+
         prompt = raw_input('Download "%s"? (y/n) ' % title)
         if prompt != 'y':
             sys.exit()
@@ -88,7 +88,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         command_tokens.insert(1, '--q')
 
     command = ' '.join(command_tokens)
-    
+
 
     # Youtube-dl is a proof that god exists.
     if not is_quiet:
@@ -130,7 +130,7 @@ def main():
 
         # No input flags are specified
         elif not search_uses_flags(argument_string, '-s', '-i', '-f'):
-            # Default to -s 
+            # Default to -s
             lyrics = argument_string.replace('-p', '').replace('-q', '')
             search = qp(lyrics)
             downloaded = query_and_download(search, not search_uses_flags('-p'), search_uses_flags('-q'))
@@ -144,7 +144,7 @@ def main():
             parser.add_argument('-q', action='store_true', dest='is_quiet', help="Run in quiet mode. Automatically turns off prompts.")
             parser.add_argument('-s', action='store', dest='song', nargs='+', help='Download a single song.')
             parser.add_argument('-l', action='store', dest='songlist', nargs='+', help='Download a list of songs, with lyrics separated by a comma (e.g. "i tried so hard and got so far, blackbird singing in the dead of night, hey shawty it\'s your birthday).')
-            parser.add_argument('-f', action='store', dest='file', nargs='+', help='Download a list of songs from a file input. Each line in the file is considered one song.') 
+            parser.add_argument('-f', action='store', dest='file', nargs='+', help='Download a list of songs from a file input. Each line in the file is considered one song.')
 
             # Parse and check arguments
             results = parser.parse_args()
