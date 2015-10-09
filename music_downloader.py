@@ -85,7 +85,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         'http://www.youtube.com/' + video_link]
 
     if is_quiet:
-        command_tokens.insert(1, '--q')
+        command_tokens.insert(1, '-q')
 
     command = ' '.join(command_tokens)
 
