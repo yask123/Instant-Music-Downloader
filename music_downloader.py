@@ -57,7 +57,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
     if not is_quiet:
         if not available:
             print('No results found matching your query.')
-            sys.exit()
+            sys.exit(2) # Indicate failure using the exit code
         else:
             if has_prompts:
                 print('Found:', '\n'.join(list_movies(available)))
