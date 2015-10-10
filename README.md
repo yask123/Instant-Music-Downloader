@@ -5,7 +5,7 @@ Without knowing the name of the song!!!!
 
 > This is so cool!
 
-## Installation
+## Installation by [Pip](https://pypi.python.org/pypi/joe)
 For Python 2.7
 
 ```$ sudo  pip install instantmusic```
@@ -13,6 +13,18 @@ For Python 2.7
 For Python 3.4
 
 ```$ sudo pip3 install instantmusic```
+
+## Note:
+You would also need `libav` to download in `.mp3` format.
+
+On Mac Os X
+### Installation by [Brew](https://brew.sh)
+
+``` $ brew install libav ```
+### On Ubuntu 
+
+``` $ sudo apt-get install libav-tools ```
+
 
 ## Example
 
