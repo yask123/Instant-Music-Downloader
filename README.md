@@ -28,7 +28,8 @@ You would also need `libav` to download in `.mp3` format.
 ```bash
 $ sudo apt-get install libav-tools 
 ```
-
+#### On Windows
+>[See this](https://github.com/yask123/Instant-Music-Downloader/issues/19) 
 
 ## Usage
 
