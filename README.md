@@ -19,11 +19,15 @@ You would also need `libav` to download in `.mp3` format.
 
 ### On Mac Os X
 #### Installation by [Brew](https://brew.sh)
-
-``` $ brew install libav ```
+```bash
+ $ brew install libav
+ ```
+ 
 ### On Ubuntu 
 
-``` $ sudo apt-get install libav-tools ```
+```bash
+$ sudo apt-get install libav-tools 
+```
 
 
 ## Example
