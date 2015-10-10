@@ -14,23 +14,23 @@ For Python 3.4
 
 ```$ sudo pip3 install instantmusic```
 
-## Note:
+### Note:
 You would also need `libav` to download in `.mp3` format.
 
-### On Mac Os X
-#### Installation by [Brew](https://brew.sh)
+#### On Mac Os X
+##### Installation by [Brew](https://brew.sh)
 ```bash
  $ brew install libav
  ```
  
-### On Ubuntu 
+#### On Ubuntu 
 
 ```bash
 $ sudo apt-get install libav-tools 
 ```
 
 
-## Example
+## Usage
 
 ```❯instantmusic ```
 
