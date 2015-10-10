@@ -17,8 +17,8 @@ For Python 3.4
 ## Note:
 You would also need `libav` to download in `.mp3` format.
 
-On Mac Os X
-### Installation by [Brew](https://brew.sh)
+### On Mac Os X
+#### Installation by [Brew](https://brew.sh)
 
 ``` $ brew install libav ```
 ### On Ubuntu 
