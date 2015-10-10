@@ -1,4 +1,4 @@
-# Instantly download any song! 
+# Instantly download any song! :guitar: :notes: :musical_score: :trumpet: :violin:
 [![Build Status](https://travis-ci.org/yask123/Instant-Music-Downloader.svg?branch=master)](https://travis-ci.org/yask123/Instant-Music-Downloader)
 
 Without knowing the name of the song!!!!
