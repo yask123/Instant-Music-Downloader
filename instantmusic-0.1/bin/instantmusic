@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 import os
+import sys
 import re
 import readline
 
@@ -31,7 +32,7 @@ def extract_videos(html):
 
 def list_movies(movies):
     for idx, (title, _) in enumerate(movies):
-        yield '[{}] {}'.format(idx, title)
+        yield '[{}] {}'.format(idx, title.decode('utf-8').encode(sys.stdout.encoding))
 
 
 def search_videos(query):
