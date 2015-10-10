@@ -32,7 +32,7 @@ $ sudo apt-get install libav-tools
 
 ## Usage
 
-```❯instantmusic ```
+```$ instantmusic ```
 
 ```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
