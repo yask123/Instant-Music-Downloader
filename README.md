@@ -1,18 +1,24 @@
 # Instantly download any song! :guitar: :notes: :musical_score: :trumpet: :violin:
 [![Build Status](https://travis-ci.org/yask123/Instant-Music-Downloader.svg?branch=master)](https://travis-ci.org/yask123/Instant-Music-Downloader)
+[![PyPI](https://img.shields.io/pypi/v/Instantmusic.svg)](https://pypi.python.org/pypi/instantmusic/1.3)
+[![PyPI](https://img.shields.io/pypi/dw/Instantmusic.svg)](https://pypi.python.org/pypi/instantmusic/1.3)
 
-Without knowing the name of the song!!!!
+Without knowing its name!!!!
 
 > This is so cool!
 
-## Installation by [Pip](https://pypi.python.org/pypi/joe)
+## Installation by [Pip](http://pip.readthedocs.org/en/stable/installing/)
 For Python 2.7
 
-```$ sudo  pip install instantmusic```
+```bash
+$ sudo  pip install instantmusic
+```
 
 For Python 3.4
 
-```$ sudo pip3 install instantmusic```
+```bash
+$ sudo pip3 install instantmusic
+```
 
 ### Note:
 You would also need `libav` to download in `.mp3` format.
@@ -26,14 +32,16 @@ You would also need `libav` to download in `.mp3` format.
 #### On Ubuntu 
 
 ```bash
-$ sudo apt-get install libav-tools 
+ $ sudo apt-get install libav-tools 
 ```
 #### On Windows
 >[See this](https://github.com/yask123/Instant-Music-Downloader/issues/19) 
 
 ## Usage
 
-```$ instantmusic ```
+```bash
+$ instantmusic 
+```
 
 ```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
@@ -57,6 +65,28 @@ another turning point a fork stuck in the road
 yeh hosla kaise jhuke
 
 >>Downloaded Yeh Hausla Kaise Jhuke - Salim-Sulaiman
+```
+### Options
+
+```
+❯ instantmusic -h                                                   
+usage: instantmusic [-h] [-p] [-q] [-s SONG [SONG ...]]
+                    [-l SONGLIST [SONGLIST ...]] [-f FILE [FILE ...]]
+
+Instantly download any song!
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p                    Turn off download prompts
+  -q                    Run in quiet mode. Automatically turns off prompts.
+  -s SONG [SONG ...]    Download a single song.
+  -l SONGLIST [SONGLIST ...]
+                        Download a list of songs, with lyrics separated by a
+                        comma (e.g. "i tried so hard and got so far, blackbird
+                        singing in the dead of night, hey shawty it's your
+                        birthday).
+  -f FILE [FILE ...]    Download a list of songs from a file input. Each line
+                        in the file is considered one song.
 ```
 
 ### Video
