@@ -1,7 +1,8 @@
 # Instantly download any song! :guitar: :notes: :musical_score: :trumpet: :violin:
 [![Build Status](https://travis-ci.org/yask123/Instant-Music-Downloader.svg?branch=master)](https://travis-ci.org/yask123/Instant-Music-Downloader)
+[![PyPI version](https://badge.fury.io/py/instantmusic.svg)](https://badge.fury.io/py/instantmusic)
 
-Without knowing the name of the song!!!!
+Without knowing its name!!!!
 
 > This is so cool!
 
