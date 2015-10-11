@@ -36,7 +36,7 @@ def list_movies(movies):
 
 def search_videos(query):
     """
-    Searchs for videos given a query
+    Searches for videos given a query
     """
     response = urlopen('https://www.youtube.com/results?search_query=' + query)
     return extract_videos(response.read())
@@ -83,6 +83,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         '--extract-audio',
         '--audio-format mp3',
         '--audio-quality 0',
+        '--output \'%(title)s.%(ext)s\'',
         'http://www.youtube.com/' + video_link]
 
     if is_quiet:
