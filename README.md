@@ -10,11 +10,15 @@ Without knowing its name!!!!
 ## Installation by [Pip](https://pypi.python.org/pypi/joe)
 For Python 2.7
 
-```$ sudo  pip install instantmusic```
+```bash
+$ sudo  pip install instantmusic
+```
 
 For Python 3.4
 
-```$ sudo pip3 install instantmusic```
+```bash
+$ sudo pip3 install instantmusic
+```
 
 ### Note:
 You would also need `libav` to download in `.mp3` format.
@@ -28,14 +32,16 @@ You would also need `libav` to download in `.mp3` format.
 #### On Ubuntu 
 
 ```bash
-$ sudo apt-get install libav-tools 
+ $ sudo apt-get install libav-tools 
 ```
 #### On Windows
 >[See this](https://github.com/yask123/Instant-Music-Downloader/issues/19) 
 
 ## Usage
 
-```$ instantmusic ```
+```bash
+$ instantmusic 
+```
 
 ```zsh
 >> Enter songname/ lyrics/ artist.. or whatever
