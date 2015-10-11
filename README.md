@@ -7,7 +7,7 @@ Without knowing its name!!!!
 
 > This is so cool!
 
-## Installation by [Pip](https://pypi.python.org/pypi/joe)
+## Installation by [Pip](http://pip.readthedocs.org/en/stable/installing/)
 For Python 2.7
 
 ```bash
