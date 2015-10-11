@@ -66,6 +66,28 @@ yeh hosla kaise jhuke
 
 >>Downloaded Yeh Hausla Kaise Jhuke - Salim-Sulaiman
 ```
+### Options
+
+```
+❯ instantmusic -h                                                   
+usage: instantmusic [-h] [-p] [-q] [-s SONG [SONG ...]]
+                    [-l SONGLIST [SONGLIST ...]] [-f FILE [FILE ...]]
+
+Instantly download any song!
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p                    Turn off download prompts
+  -q                    Run in quiet mode. Automatically turns off prompts.
+  -s SONG [SONG ...]    Download a single song.
+  -l SONGLIST [SONGLIST ...]
+                        Download a list of songs, with lyrics separated by a
+                        comma (e.g. "i tried so hard and got so far, blackbird
+                        singing in the dead of night, hey shawty it's your
+                        birthday).
+  -f FILE [FILE ...]    Download a list of songs from a file input. Each line
+                        in the file is considered one song.
+```
 
 ### Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=H2GQc81hpBE
