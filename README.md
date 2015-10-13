@@ -97,8 +97,9 @@ The script automatically embeds `id3` tags (Artist name and Song title) to the d
 
 
 For Album art (Experimental): [Fixalbumart](http://iyask.me/fixalbumart/)
+
 For Lyrics (Experimental): [AutoLyricsTagger](https://github.com/yask123/Auto-MP3-Lyrics-Tagger)
-> I'll merge these two projects after some optimizations.
+> I'll merge these two projects to Instant-Music-Downloader after some more testing and optimizations. Please feel free to try those experimental projects and report issues.
 
 <img src="http://i.imgur.com/GkUSPCm.png" height="50%" width="50%">
 
