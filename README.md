@@ -96,8 +96,9 @@ optional arguments:
 The script automatically embeds `id3` tags (Artist name and Song title) to the downloaded `.mp3` file.
 
 
-For album art (Experimental): [Fixalbumart](http://iyask.me/fixalbumart/)
-
+For Album art (Experimental): [Fixalbumart](http://iyask.me/fixalbumart/)
+For Lyrics (Experimental): [AutoLyricsTagger](https://github.com/yask123/Auto-MP3-Lyrics-Tagger)
+> I'll merge these two projects after some optimizations.
 
 <img src="http://i.imgur.com/GkUSPCm.png" height="50%" width="50%">
 
