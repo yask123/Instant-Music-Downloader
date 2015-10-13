@@ -97,7 +97,9 @@ The script automatically embeds `id3` tags (Artist name and Song title) to the d
 
 
 For album art (Experimental): [Fixalbumart](http://iyask.me/fixalbumart/)
-<img src="http://i.imgur.com/GkUSPCm.png" height="50%: width="50%">
+
+
+<img src="http://i.imgur.com/GkUSPCm.png" height="50%" width="50%">
 
 
 ```bash
