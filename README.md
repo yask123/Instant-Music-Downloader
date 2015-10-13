@@ -89,6 +89,33 @@ optional arguments:
                         in the file is considered one song.
 ```
 
+## MP3 Tags
+WIP
+
+
+The script automatically embeds `id3` tags (Artist name and Song title) to the downloaded `.mp3` file.
+
+
+For album art (Experimental): [Fixalbumart](http://iyask.me/fixalbumart/)
+
+
+```bash
+$ sudo pip install fixalbumart
+
+❯cd MyMusic
+
+❯fixalbumart
+
+>> Fixing taylor swift - love story
+>> In the end - Linkin park 
+......
+
+>> Fixed all songs
+
+```
+
+
+
 ### Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=H2GQc81hpBE
 " target="_blank"><img src="http://img.youtube.com/vi/H2GQc81hpBE/0.jpg" 
