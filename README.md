@@ -89,8 +89,8 @@ optional arguments:
                         in the file is considered one song.
 ```
 
-## MP3 Tags
-WIP
+### MP3 Tags
+> WIP
 
 
 The script automatically embeds `id3` tags (Artist name and Song title) to the downloaded `.mp3` file.
