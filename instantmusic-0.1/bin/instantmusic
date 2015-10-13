@@ -5,6 +5,7 @@ import os
 import sys
 import re
 import readline
+import eyed3
 
 from bs4 import BeautifulSoup
 
@@ -97,7 +98,21 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
     if not is_quiet:
         print('Downloading')
     os.system(command)
-
+    
+    #Fixing id3 tags
+    print ('Fixing id3 tags')
+    list_name = title.split('-')
+    track_name = list_name[0]
+    artist=list_name[1]
+  
+    audiofile = eyed3.load((title+'.mp3'))
+    if audiofile.tag is None:
+            audiofile.tag = eyed3.id3.Tag()
+            audiofile.tag.file_info = eyed3.id3.FileInfo("foo.id3")
+    audiofile.tag.artist=unicode(artist, "utf-8")
+    audiofile.tag.title=unicode(track_name, "utf-8")
+    audiofile.tag.save()
+    
     return title
 
 def search_uses_flags(argstring, *flags):
