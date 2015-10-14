@@ -131,6 +131,10 @@ alt="Demo" width="240" height="180" border="10" /></a>
 1. Youtube-dl
 2. BeautifulSoup
 
+## Disclaimer
+
+Use this software at your own risk, it uses `youtube-dl` to download music.
+
 
 ## The MIT License
 > Copyright (c) 2015 Yask Srivastava http://iyask.me
