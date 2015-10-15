@@ -133,7 +133,8 @@ alt="Demo" width="240" height="180" border="10" /></a>
 
 ## Disclaimer
 
-Use this software at your own risk, it uses `youtube-dl` to download music.
+Legal Notice: The Author is not responisble for any infringements made by the users of these script
+
 
 
 ## The MIT License
