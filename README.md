@@ -98,10 +98,15 @@ The script automatically embeds `id3` tags to the downloaded `.mp3` file.
 
 For Album art (Experimental): [Fixalbumart](http://iyask.me/fixalbumart/)
 It will grab following meta data:
+
 1. Track title (From YT)
+
 2. Artist (From YT)
+
 3. Album name (From metrolyrics.com)
+
 4. Album art (From google images)
+
 5. Lyrics  (From metrolyrics.com) 
 
 <img src="http://i.imgur.com/fNXww62.png" height="50%" width="50%">
