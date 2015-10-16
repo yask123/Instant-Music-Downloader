@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from __future__ import print_function
 import os
@@ -6,7 +6,6 @@ import sys
 import re
 import readline
 import eyed3
-import urllib2
 from bs4 import BeautifulSoup
 import requests
 # Version compatiblity
@@ -39,14 +38,9 @@ def grab_albumart(search=''):
            'Accept-Encoding': 'none',
            'Accept-Language': 'en-US,en;q=0.8',
            'Connection': 'keep-alive'}
-    req = urllib2.Request(site, headers=hdr)
+    req = requests.get(site, headers=hdr)
 
-    try:
-        page = urllib2.urlopen(req)
-    except:
-        print ('network problem')
-
-    content = page.read()
+    content = str(req.content)
     end =  content.find('jpg')
     start= content[:end].rfind('http')
 
@@ -128,44 +122,44 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         track_name = list_name[1]
         album_name=''
         try:
-			try:
-				audiofile = eyed3.load((title+'.mp3'))
-			except:
-				audiofile = eyed3.load((title+'.m4a')) 
+            try:
+                audiofile = eyed3.load((title+'.mp3'))
+            except:
+                audiofile = eyed3.load((title+'.m4a')) 
 
-			url = 'http://www.google.com/search?q='+qp(title)
-			req = requests.get(url)
-			response = req.content
-			result=response
-			link_start=result.find('http://www.metrolyrics.com')
-			link_end=result.find('html',link_start+1)
-			link = result[link_start:link_end+4]
-			lyrics_html = link
-			a = requests.get(lyrics_html)
-			print (lyrics_html)
-			html_doc=  a.content
-			soup = BeautifulSoup(html_doc, 'html.parser')
-			try:
-				album_name = soup.find(id = "album-name-link").text
-			except:
-				print ('Cant get album name')
-			try:
-				raw_lyrics= (soup.findAll('p', attrs={'class' : 'verse'}))
-				paras=[]
-				test1=unicode.join(u'\n',map(unicode,raw_lyrics))
+            url = 'http://www.google.com/search?q='+qp(title)
+            req = requests.get(url)
+            response = req.content
+            result=response
+            link_start=result.find('http://www.metrolyrics.com')
+            link_end=result.find('html',link_start+1)
+            link = result[link_start:link_end+4]
+            lyrics_html = link
+            a = requests.get(lyrics_html)
+            print (lyrics_html)
+            html_doc=  a.content
+            soup = BeautifulSoup(html_doc, 'html.parser')
+            try:
+                album_name = soup.find(id = "album-name-link").text
+            except:
+                print ('Cant get album name')
+            try:
+                raw_lyrics= (soup.findAll('p', attrs={'class' : 'verse'}))
+                paras=[]
+                test1=unicode.join(u'\n',map(unicode,raw_lyrics))
 
-				test1= (test1.replace('<p class="verse">','\n'))
-				test1= (test1.replace('<br/>',' '))
-				test1 = test1.replace('</p>',' ')
-				print (test1)
-				audiofile.tag.lyrics.set(u''+test1 )
-			except:
-				print ('cant get lyrics')			
+                test1= (test1.replace('<p class="verse">','\n'))
+                test1= (test1.replace('<br/>',' '))
+                test1 = test1.replace('</p>',' ')
+                print (test1)
+                audiofile.tag.lyrics.set(u''+test1 )
+            except:
+                print ('cant get lyrics')           
 
 
         except Exception as e: 
-        	print(e)
-        	print ('error getting album and lyrics')
+            print(e)
+            print ('error getting album and lyrics')
 
 
 
@@ -178,27 +172,26 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         audiofile.tag.title=unicode(track_name)
         audiofile.tag.album =unicode(album_name)
 
-        print ('something wrong up')
         search =  title[:-4]
+        print ('Downloaidng album art..')
         image_link= grab_albumart(search)
-        print (image_link+' image link')
         str = title
         str = unicode(str, errors='replace')
         title = str.encode('utf8')
         print ('Fixing '+title)
         eyed3.log.setLevel("ERROR")
         if audiofile.tag is None:
-        	audiofile.tag = eyed3.id3.Tag()
-        	audiofile.tag.file_info = eyed3.id3.FileInfo("foo.id3")
-    	response = requests.get(image_link).content
-    	imagedata = response
+            audiofile.tag = eyed3.id3.Tag()
+            audiofile.tag.file_info = eyed3.id3.FileInfo("foo.id3")
+        response = requests.get(image_link).content
+        imagedata = response
 
         audiofile.tag.images.set(0,imagedata,"image/jpeg",u"Album Art")
         audiofile.tag.save()
         print ('Fixed')
     except Exception as e: 
-    	print(e)
-    	print ('couldnt get album art')
+        print(e)
+        print ('couldnt get album art')
 
     return title
 
