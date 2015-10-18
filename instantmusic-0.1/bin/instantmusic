@@ -164,9 +164,17 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
 
 
         print (artist,track_name,album_name)
-        artist=artist[:artist.find('[')].strip()
-        track_name=track_name[:track_name.find('[')].strip()
-        album_name=album_name[:album_name.find('[')].strip()
+        
+        def fix_string(str):
+            location = str.find('[')
+            if location != -1:
+                return str[:location].strip()
+            else:
+                return str.strip()
+
+        artist=fix_string(artist)
+        track_name=fix_string(track_name)
+        album_name=fix_string(album_name)
 
         audiofile.tag.artist=unicode(artist)
         audiofile.tag.title=unicode(track_name)
