@@ -11,7 +11,7 @@ Without knowing its name!!!!
 For Python 2.7
 
 ```bash
-$ sudo  pip install instantmusic
+$ sudo pip install instantmusic
 ```
 
 For Python 3.4
