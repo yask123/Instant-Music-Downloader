@@ -1,4 +1,5 @@
 from setuptools import setup
+from sys import platform
 
 setup(name='instantmusic',
       version='1.2',
@@ -13,5 +14,5 @@ setup(name='instantmusic',
           'youtube-dl',
           'BeautifulSoup4',
           'eyed3'
-      ],
+      ] + (['pyreadline'] if platform.startswith('win') else []),
       zip_safe=False)
