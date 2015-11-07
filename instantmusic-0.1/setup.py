@@ -13,6 +13,7 @@ setup(name='instantmusic',
       install_requires=[
           'youtube-dl',
           'BeautifulSoup4',
-          'eyed3'
+          'eyed3',
+          'requests'
       ] + (['pyreadline'] if platform.startswith('win') else []),
       zip_safe=False)
