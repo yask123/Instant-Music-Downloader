@@ -89,7 +89,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
 
         valid = ['Y', 'y', '']
         prompt = raw_input('Download "%s"? (y/n) ' % title)
-        if prompt not in valid:
+        if prompt.lower() not in valid:
             sys.exit()
     # Otherwise, just download the first in available list
     else:
