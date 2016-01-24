@@ -88,8 +88,8 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         title, video_link = available[int(choice)]
 
         valid = ['Y', 'y', '']
-        prompt = raw_input('Download "%s"? (Y/n) ' % title)
-        if prompt not in valid:
+        prompt = raw_input('Download "%s"? (y/n) ' % title)
+        if prompt.lower() not in valid:
             sys.exit()
     # Otherwise, just download the first in available list
     else:
@@ -102,7 +102,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         '--audio-format mp3',
         '--audio-quality 0',
         '--output \'%(title)s.%(ext)s\'',
-        'http://www.youtube.com/' + video_link]
+        'https://www.youtube.com' + video_link]
 
     if is_quiet:
         command_tokens.insert(1, '-q')
@@ -128,11 +128,11 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
             except:
                 audiofile = eyed3.load((title+'.m4a')) 
 
-            url = 'http://www.google.com/search?q='+qp(title)
+            url = 'https://www.google.com/search?q='+qp(title)
             req = requests.get(url)
             response = req.content
             result=response
-            link_start=result.find('http://www.metrolyrics.com')
+            link_start=result.find('https://www.metrolyrics.com')
             link_end=result.find('html',link_start+1)
             link = result[link_start:link_end+4]
             lyrics_html = link
@@ -155,10 +155,10 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
                 print (test1)
                 audiofile.tag.lyrics.set(u''+test1 )
             except:
-                print ('cant get lyrics')           
+                print ('cant get lyrics')
 
 
-        except Exception as e: 
+        except Exception as e:
             print(e)
             print ('error getting album and lyrics')
 
