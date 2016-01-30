@@ -51,6 +51,23 @@ def list_movies(movies):
     for idx, (title, _) in enumerate(movies):
         yield '[{}] {}'.format(idx, title.decode('utf-8').encode(sys.stdout.encoding))
 
+def get_lyrics_url(response):
+    """
+    Getting the url for lyrics.
+    """
+    metrolyrics = 'https://www.metrolyrics.com'
+    link_start = response.find(metrolyrics)
+    if link_start is -1:
+        print ("Not able to find https, trying http")
+        metrolyrics = 'http://www.metrolyrics.com'
+        link_start = response.find(metrolyrics)
+    
+    if link_start is -1:
+        print ("Metro lyrics not found")
+        return ""
+    link_end = response.find('html',link_start + 1)
+    link = response[link_start:link_end + 4]
+    return link
 
 def search_videos(query):
     """
@@ -132,10 +149,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
             req = requests.get(url)
             response = req.content
             result=response
-            link_start=result.find('https://www.metrolyrics.com')
-            link_end=result.find('html',link_start+1)
-            link = result[link_start:link_end+4]
-            lyrics_html = link
+            lyrics_html = get_lyrics_url(result) 
             a = requests.get(lyrics_html)
             print (lyrics_html)
             html_doc=  a.content
