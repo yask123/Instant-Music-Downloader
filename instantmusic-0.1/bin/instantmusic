@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 import requests
 # Version compatiblity
 import sys
+
 if (sys.version_info > (3, 0)):
     from urllib.request import urlopen
     from urllib.parse import quote_plus as qp
@@ -29,6 +30,20 @@ def extract_videos(html):
     found = soup.find_all('a', 'yt-uix-tile-link', href=pattern)
     return [(x.text.encode('utf-8'), x.get('href')) for x in found]
 
+def makeRequest(url, hdr):
+    http_proxy  = os.environ.get("HTTP_PROXY")
+    https_proxy = os.environ.get("HTTPS_PROXY")
+    ftp_proxy   = os.environ.get("FTP_PROXY")
+
+    proxyDict = { 
+        "http"  : http_proxy,
+        "https" : https_proxy,
+        "ftp"   : ftp_proxy
+        }
+
+    req = requests.get(url, headers=hdr, proxies=proxyDict)
+    return req
+
 def grab_albumart(search=''):
     search = qp(search)
     site = "https://www.google.com/search?site=&tbm=isch&source=hp&biw=1112&bih=613&q="+search+"&oq=backst&gs_l=img.3.0.0l10.1011.3209.0.4292.8.7.1.0.0.0.246.770.0j3j1.4.0..3..0...1.1.64.img..3.5.772.KyXkrVfTLT4#tbm=isch&q=back+street+boys+I+want+it+that+way"
@@ -38,7 +53,7 @@ def grab_albumart(search=''):
            'Accept-Encoding': 'none',
            'Accept-Language': 'en-US,en;q=0.8',
            'Connection': 'keep-alive'}
-    req = requests.get(site, headers=hdr)
+    req = makeRequest(site, hdr)
 
     content = str(req.content)
     end =  content.find('jpg')
@@ -73,8 +88,8 @@ def search_videos(query):
     """
     Searches for videos given a query
     """
-    response = urlopen('https://www.youtube.com/results?search_query=' + query)
-    return extract_videos(response.read())
+    response = makeRequest('https://www.youtube.com/results?search_query=' + query, {})
+    return extract_videos(response.content)
 
 def query_and_download(search, has_prompts=True, is_quiet=False):
     """
@@ -146,11 +161,11 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
                 audiofile = eyed3.load((title+'.m4a')) 
 
             url = 'https://www.google.com/search?q='+qp(title)
-            req = requests.get(url)
+            req = makeRequest(url, {})
             response = req.content
             result=response
             lyrics_html = get_lyrics_url(result) 
-            a = requests.get(lyrics_html)
+            a = makeRequest(lyrics_html, {})
             print (lyrics_html)
             html_doc=  a.content
             soup = BeautifulSoup(html_doc, 'html.parser')
@@ -206,7 +221,7 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         if audiofile.tag is None:
             audiofile.tag = eyed3.id3.Tag()
             audiofile.tag.file_info = eyed3.id3.FileInfo("foo.id3")
-        response = requests.get(image_link).content
+        response = makeRequest(image_link, {}).content
         imagedata = response
 
         audiofile.tag.images.set(0,imagedata,"image/jpeg",u"Album Art")
