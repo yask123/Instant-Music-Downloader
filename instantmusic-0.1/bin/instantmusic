@@ -192,13 +192,13 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
 
 
         print (artist,track_name,album_name)
-        
-        def fix_string(str):
-            location = str.find('[')
+
+        def fix_string(s):
+            location = s.find('[')
             if location != -1:
-                return str[:location].strip()
+                return s[:location].strip()
             else:
-                return str.strip()
+                return s.strip()
 
         artist=fix_string(artist)
         track_name=fix_string(track_name)
