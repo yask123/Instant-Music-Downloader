@@ -204,16 +204,14 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
         track_name=fix_string(track_name)
         album_name=fix_string(album_name)
 
-        audiofile.tag.artist=unicode(artist)
-        audiofile.tag.title=unicode(track_name)
-        audiofile.tag.album =unicode(album_name)
+        audiofile.tag.artist = unicode(artist)
+        audiofile.tag.title = unicode(track_name)
+        audiofile.tag.album = unicode(album_name)
 
         search =  title[:-4]
         print ('Downloading album art..')
         image_link= grab_albumart(search)
-        str = title
-        str = unicode(str, errors='replace')
-        title = str.encode('utf8')
+        title = unicode(title, errors='replace').encode('utf8')
         print ('Fixing '+title)
         eyed3.log.setLevel("ERROR")
         if audiofile.tag is None:
