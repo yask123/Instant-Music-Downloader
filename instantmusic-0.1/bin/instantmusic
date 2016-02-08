@@ -12,11 +12,9 @@ import requests
 import sys
 
 if (sys.version_info > (3, 0)):
-    from urllib.request import urlopen
     from urllib.parse import quote_plus as qp
     raw_input = input
 else:
-    from urllib2 import urlopen
     from urllib import quote_plus as qp
 
 
@@ -253,7 +251,7 @@ def main():
     if not sys.argv[1:]:
         # We do not want to accept empty inputs :)
         while search == '':
-            search = raw_input('Enter songname/ lyrics/ artist.. or whatever\n> ')
+            search = raw_input('Enter songname / lyrics / artist.. or whatever\n> ')
         search = qp(search)
         downloaded = query_and_download(search)
 
