@@ -14,6 +14,7 @@ import sys
 if (sys.version_info > (3, 0)):
     from urllib.parse import quote_plus as qp
     raw_input = input
+    unicode = str
 else:
     from urllib import quote_plus as qp
 
@@ -192,28 +193,26 @@ def query_and_download(search, has_prompts=True, is_quiet=False):
 
 
         print (artist,track_name,album_name)
-        
-        def fix_string(str):
-            location = str.find('[')
+
+        def fix_string(s):
+            location = s.find('[')
             if location != -1:
-                return str[:location].strip()
+                return s[:location].strip()
             else:
-                return str.strip()
+                return s.strip()
 
         artist=fix_string(artist)
         track_name=fix_string(track_name)
         album_name=fix_string(album_name)
 
-        audiofile.tag.artist=unicode(artist)
-        audiofile.tag.title=unicode(track_name)
-        audiofile.tag.album =unicode(album_name)
+        audiofile.tag.artist = unicode(artist)
+        audiofile.tag.title = unicode(track_name)
+        audiofile.tag.album = unicode(album_name)
 
         search =  title[:-4]
         print ('Downloading album art..')
         image_link= grab_albumart(search)
-        str = title
-        str = unicode(str, errors='replace')
-        title = str.encode('utf8')
+        title = unicode(title, errors='replace').encode('utf8')
         print ('Fixing '+title)
         eyed3.log.setLevel("ERROR")
         if audiofile.tag is None:
