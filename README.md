@@ -4,11 +4,6 @@
 [![Build Status](https://travis-ci.org/yask123/Instant-Music-Downloader.svg?branch=master)](https://travis-ci.org/yask123/Instant-Music-Downloader)
 [![PyPI](https://img.shields.io/pypi/v/Instantmusic.svg)](https://pypi.python.org/pypi/instantmusic/1.3)
 
-
-### Note for KWOC folks:
-> Please use gitter for all communications. I won't be able to respond individually via emailuntill Jan (busy).
-> But I will try my best to answer all your questions via gitter.
-
 Without knowing its name!!
 
 > This is so cool!
@@ -17,13 +12,13 @@ Without knowing its name!!
 For Python 2.7
 
 ```bash
-$ sudo pip install instantmusic
+$  pip install instantmusic
 ```
 
 For Python 3.4
 
 ```bash
-$ sudo pip3 install instantmusic
+$ pip3 install instantmusic
 ```
 
 ### Note:
