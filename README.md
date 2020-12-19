@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/yask123/Instant-Music-Downloader.svg?branch=master)](https://travis-ci.org/yask123/Instant-Music-Downloader)
 [![PyPI](https://img.shields.io/pypi/v/Instantmusic.svg)](https://pypi.python.org/pypi/instantmusic/1.3)
 
-<a href="https://www.buymeacoffee.com/CyN7Kv3"> Buy me a coffe </a>
+<a href="https://www.buymeacoffee.com/CyN7Kv3"> Buy me a coffee </a>
 
 Without knowing its name!!
 
